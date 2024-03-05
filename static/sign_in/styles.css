@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    font-style: italic;
+    user-select: none;
+    border: none;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    background-position: center; 
+	background-image:url('images/background.jpg');
+	background-size: cover;    
+	background-repeat: no-repeat;  
+	background-position: center; 
+}
+
+#frame{
+    border: 2px solid #4C4A50; 
+	width: 550px;
+	height: 550px;
+	background-color: #C7C7C7;
+	box-shadow: 
+		inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+    	0.3em 0.3em 1em rgba(0, 0, 0, 0.3); 
+}
+
+#reg{
+    width: 100%;
+    height: 100%;
+    display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-around;
+	align-items: center;
+}
+
+#choise{
+    width: 100%;
+    height: 100%;
+    display: none;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+#header{
+    align-self: flex-start;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40px;
+}
+
+.label{
+    width: auto;
+    height: auto;
+    font-size: 1.25rem;
+    color: #4C4A50;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: end;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.2s color;
+    font-weight: bold;
+}
+
+.label:nth-of-type(2){
+    justify-content: start;
+}
+
+#header> p{
+    margin: 0 10px;
+    width: auto;
+    height: auto;
+    font-size: 2rem;
+    color: #4C4A50;
+}
+
+#header>input[type=radio]{
+    display: none;
+}
+
+#teacher:checked + label,
+#student:checked + label {
+    color: black;
+}
+
+#content {
+    width: 75%;
+    height: 35%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#content>div{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: start;
+    align-items: start;
+}
+
+.input{
+    width: 100%;
+    height: auto;
+    font-size: 1.75rem;
+    padding: 5px 10px;
+    background-color: #C7C7C7;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid #4C4A50;
+}
+
+.input::placeholder{
+    color: #4C4A50;
+}
+
+#username{
+    margin-top: 21.6px;
+}
+
+.warning{
+    width: auto;
+    height: auto;
+    font-size: 1rem;
+    color: #C7C7C7;
+    transition: 0.1s color;
+}
+
+#content span.warning:nth-child(3) {
+    font-size: 1.2rem;
+    height: auto;
+}
+
+#sign_in{
+    width: 250px;
+    height: 60px;
+    border-radius: 9999px;
+    background-color: #4C4A50;
+    font-size: 1.5rem;
+    color: #C7C7C7;
+    transition: 0.2s transform;
+    box-shadow: 
+		inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+    	0.3em 0.3em 1em rgba(0, 0, 0, 0.3); 
+    cursor: pointer;
+}
+
+#sign_in:hover{
+    transform: scale(1.05);
+}
+
+#choises{
+    margin-top: 65px;
+    width: 100%;
+    height: auto;
+    display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.place_for_category{
+	transition: 0.25s background-color;
+	width: 250px;
+	height: 300px;
+	display: flex; 
+	flex-flow: column nowrap;
+	justify-content: space-evenly;
+	align-items: center;
+	background-color: #D0D0D0;
+	border-radius: 10px;
+	box-shadow: 
+		inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+    	0.3em 0.3em 1em rgba(0, 0, 0, 0.3); 
+}
+
+.place_for_picture{
+	transition: 0.25s opacity;
+	width: 200px;
+	height: 200px;
+	background-size: contain;    
+	background-repeat: no-repeat;  
+	background-position: center; 
+    background-size: 90%;
+}
+
+#add{
+    background-image: url(images/setting.png);
+}
+
+#lib{
+    background-image: url(images/category.png);
+}
+
+.place_for_text{
+	width: 200px;
+	height: 25px;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.large_text{
+	width: auto;
+	height: auto;
+	font-size: 2rem;
+	color: #4C4A50;
+    font-weight: bold;
+}
+
+.place_for_category:hover{
+	background-color: #A6A6A6;
+}
+
+.place_for_category:hover .place_for_picture{
+	opacity: 0.5;
+}
+
+#back{
+	width: 40px;
+	height: 40px;
+	background-size: contain;    
+	background-size: 100%;
+	background-repeat: no-repeat;  
+	background-position: center; 
+    cursor: pointer;
+    background-color: #C7C7C7;
+    background-image: url(images/back.png);
+    align-self: flex-end;
+    margin: 20px 20px 0px 0px;
+}

@@ -1,0 +1,85 @@
+<html>  
+<head>  
+	<meta charset="UTF-8">  
+	<link rel="stylesheet" href="{{ url_for('static', filename='editing/styles.css') }}">
+	<script src="{{ url_for('static', filename='editing/script.js') }}" defer></script>
+	 <title>Обработка изображений</title>  
+</head>  
+<body data-func="{{ func }}" data-pic=" {{ pic_data }} ">
+	<div id="background_for_gif">
+		<div>
+			<div>
+				<a href="/" id="main_button"></a>
+				<a href="/library" id="library_button"></a>
+			</div>
+		</div>
+		<div>
+			<div id="form">
+				<div id="label_div">  
+					<label id="label"> 
+						<input type="file" accept=".png, .jpg, .jpeg, .ico">  
+						<div id="text">  
+    						<p class="text">Выберите файл</p>  
+    						<p class="text">или</p>       
+    						<p class="text">перетащите его сюда</p>  
+    						<p class="text">(тип файлов .png или .jpg)</p>  
+   						</div>
+  					</label>
+					<div id="back_div">
+						<button id="back_button"></button>
+					</div>   
+				</div>  
+ 				 <div id="search_div">   
+    				<input type="text" placeholder="Вставьте URL-ссылку" id="search" value="">  
+    				<div>
+						<button id="search_button"></button>  
+					</div>
+  				</div>
+				<div id="settings">
+					<div id="first_setting">
+						<span class="description">Название:</span>
+						<input type="text" placeholder="Введите название" id="name" autocomplete="off">
+					</div>
+					<div id="second_setting">
+						<span class="description">Категория:</span>
+						<div id="drop_down_menu">
+							<div id="first_punkt">
+								<span data-number = "0">Живопись</span>
+								<div>
+									<button id="drop_down_button"></button>
+								</div>
+							</div>
+							<div id="drop_down_menu_content" data-length= "{{ koll }}">
+								<span>Живопись</span>
+								<span>Графика</span>
+								<span>Скульптура</span>
+								<span>Архитектура</span>
+							</div>
+						</div>
+					</div>
+					<div id="third_setting">
+						<span class="description">Озвучка:</span>
+						<div>
+							<div id="form_for_change">
+								<input id="change_1" type="radio" name="radio" value="1" checked>
+								<label for="change_1" class="label_for_change" id="label_for_change_1">AI</label>
+								<input id="change_2" type="radio" name="radio" value="2">
+								<label for="change_2" class="label_for_change" id="label_for_change_2">Custom</label>
+							</div>
+							<textarea id="text_of_description" maxlength="320" cols="25" rows="4"></textarea>
+						</div>
+					</div>
+					<div id="fourth_setting">
+						<span class="description">Номер:</span>
+						<input type="text" placeholder="Введите номер от 1 до {{ koll[0] + 1}}" id="indexing" autocomplete="off">
+					</div>
+				</div>   
+			</div>
+			<div id="buttons_div">
+				<button id="sending_button"></button>
+			</div>
+		</div>
+		<div></div>
+	</div>
+</body>  
+</html> 

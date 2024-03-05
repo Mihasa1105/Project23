@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='sign_in/styles.css') }}">
+        <script src="{{ url_for('static', filename='sign_in/script.js') }}" defer></script>
+    <title>Регистрация</title>
+</head>
+<body>
+    <div id="frame">
+        <div id="reg">
+            <div id="header">
+                <input type="radio" id="student" name="radio" checked>
+                <label for="student" class="label">УЧАЩИЙСЯ</label>
+                <p>/</p>
+                <input type="radio" id="teacher" name="radio">
+                <label for="teacher" class="label">ПРЕПОДАВАТЕЛЬ</label>
+            </div>
+            <div id="content">
+                <div>
+                    <input class="input" autocomplete="off" type="text" placeholder="Введите имя" id="username">
+                    <span class="warning">Введите имя пользователя!</span>
+                </div>
+                <div>
+                    <input class="input" autocomplete="off" type="password" placeholder="Введите пароль" id="password">
+                    <span class="warning">Введите пароль!</span>
+                </div>
+                <span class="warning">Неверное имя пользователя или пароль!</span>
+            </div>
+            <button type="button" id="sign_in">Войти</button>
+        </div>
+        <div id="choise">
+            <button id="back"></button>
+            <div id="choises">
+                <div class="place_for_category">
+                    <div class="place_for_picture" id="add">
+                    </div>
+                    <div class="place_for_text">
+                        <span class="large_text">Добавление</span>
+                    </div>
+                </div>
+                <div class="place_for_category">
+                    <div class="place_for_picture" id="lib">
+                    </div>
+                    <div class="place_for_text">
+                        <span class="large_text">Библиотека</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

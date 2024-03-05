@@ -1,0 +1,47 @@
+<html>  
+<head>  
+	<meta charset="UTF-8">  
+ 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='library/styles.css') }}">
+ 	<script type="text/javascript" src="{{ url_for('static', filename='library/script.js') }}" defer></script>
+	<title>Галерея</title>  
+</head>  
+<body data-preview="{{ first_pics }}">  
+	<div id="form">
+		<div class="place_for_category" data-description="Живопись">
+			<div class="place_for_picture">
+			</div>
+			<div class="place_for_text">
+				<span class="large_text">Живопись</span>
+				<span class="small_text">(Кол-во изображений - {{ koll[0] }})</span>
+			</div>
+		</div>
+		<div class="place_for_category" data-description="Графика">
+			<div class="place_for_picture">
+			</div>
+			<div class="place_for_text">
+				<span class="large_text">Графика</span>
+				<span class="small_text">(Кол-во изображений - {{ koll[1] }})</span>
+			</div>
+		</div>
+		<div class="place_for_category" data-description="Скульптура">
+			<div class="place_for_picture">
+			</div>
+			<div class="place_for_text">
+				<span class="large_text">Скульптура</span>
+				<span class="small_text">(Кол-во изображений - {{ koll[2] }})</span>
+			</div>
+		</div>
+		<div class="place_for_category" data-description="Архитектура">
+			<div class="place_for_picture">
+			</div>
+			<div class="place_for_text">
+				<span class="large_text">Архитектура</span>
+				<span class="small_text">(Кол-во изображений - {{ koll[3] }})</span>
+			</div>
+		</div>
+	</div>
+	<div id="header_of_body">	
+		<button id="main_button"></button>
+	</div>
+</body>  
+</html> 

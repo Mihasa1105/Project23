@@ -1,0 +1,112 @@
+<html>  
+<head>  
+	<meta charset="UTF-8">  
+	<link rel="stylesheet" href="{{ url_for('static', filename='show/styles.css') }}">
+	<script src="{{ url_for('static', filename='show/script.js') }}" defer></script>
+	<title>Показ изображений</title>  
+</head>
+<body data-desc = "{{ my_desc }}" 
+	  data-name = "{{ my_name }}" 
+	  data-link = "{{ my_link }}">
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+		<defs>
+			<filter id="protanomaly">
+				<feColorMatrix
+					type="matrix"
+					values="0.817,0.183,0,0,0
+							0.333,0.667,0,0,0
+							0,0.125,0.875,0,0
+							0,0,0,1,0"
+				/>
+			</filter>
+		</defs>
+	</svg>
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+		<defs>
+			<filter id="deuteranomaly">
+				<feColorMatrix
+					type="matrix"
+					values="0.8,0.2,0,0,0
+							0.258,0.742,0,0,0
+							0,0.142,0.858,0,0
+							0,0,0,1,0"
+				/>
+			</filter>
+		</defs>
+	</svg>
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+		<defs>
+			<filter id="tritanomaly">
+				<feColorMatrix
+					type="matrix"
+					values="0.967,0.033,0,0,0
+							0,0.733,0.267,0,0
+							0,0.183,0.817,0,0
+							0,0,0,1,0"
+				/>
+			</filter>
+		</defs>
+	</svg>
+	<div id="main">
+		<div class="header_of_body">
+			<div class="settings" id="s1">
+				<button id="audio_button" class="aud"></button>
+				<button id="pause_button" class="pause"></button>
+			</div>
+			<span></span>
+			<button id="setting_button"><div></div></button>
+		</div>
+		<div id="form" class="animation">
+			<button id="left_button"></button>
+			<div id="frame"> 
+				<div id="place_for_picture"></div>
+				<div id="text">
+					<div id="name">
+						<span>Название:</span>
+						<span></span>
+					</div>
+					<span id="description"></span>
+				</div>
+			</div>
+			<button id="right_button"></button>
+		</div>
+		<div class="header_of_body">
+			<div class="settings">
+				<a href="/" id="main_button"></a>
+				<button id="library_button"></button>
+			</div>
+			<div class="settings" id="s2">
+				<button id="editing_button"></button>
+				<button id="delete_button"></button>
+			</div>
+		</div>
+	</div>
+	<div id="menu">
+		<span>НАСТРОЙКИ:</span>
+        <span class="little_header">Контрастность:</span>
+        <div>
+            <div>             
+                <div class="tick-label">0</div>                
+                <div class="tick-label">1</div>                
+                <div class="tick-label">2</div>                
+                <div class="tick-label">3</div>          
+                <div class="tick-label">4</div>
+            </div>
+            <input type="range" min="0" max="4" step="1" value="1" id="contrast_range">
+        </div>
+		<span class="little_header">Цветокоррекция:</span>
+		<div id="form_for_change">
+			<input id="ch1" type="radio" name="radio" value="1" checked>
+			<label for="ch1" class="label_for_change" id="label_for_change_1" title="Обычный"></label>
+			<input id="ch2" type="radio" name="radio" value="2">
+			<label for="ch2" class="label_for_change" id="label_for_change_2" title="Протанопия"></label>
+			<input id="ch3" type="radio" name="radio" value="3">
+			<label for="ch3" class="label_for_change" id="label_for_change_3" title="Дейтеранопия"></label>
+			<input id="ch4" type="radio" name="radio" value="4">
+			<label for="ch4" class="label_for_change" id="label_for_change_4" title="Тританопия"></label>
+		</div>
+		<span class="little_header">Голос озвучки:</span>
+		<select id="voice_select"></select>
+	</div>
+</body>  
+</html> 
